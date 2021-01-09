@@ -63,7 +63,7 @@ Github: <a href="https://github.com/freshSauce">@freshSauce</a>
         all_low_alerts = []
         try:
             for alert in alerts['higherThan']:
-                high_alert = f'Symbol: {alert.split('-')[1]} ID: {alert.split('-')[0]} Price: {alerts['higherThan'][alert]}'
+                high_alert = f'Symbol: {alert.split("-")[1]} ID: {alert.split("-")[0]} Price: {alerts["higherThan"][alert]}'
                 all_high_alerts.append(high_alert)
             self.data['text'] = f'Higher Than - Alerts:\n\n{"\n".join(all_high_alerts)}'
             r.post(url=sendMessageUrl, data=self.data)
@@ -72,7 +72,7 @@ Github: <a href="https://github.com/freshSauce">@freshSauce</a>
             r.post(url=sendMessageUrl, data=self.data)
         try:
             for alert in alerts['lowerThan']:
-                low_alert = f'Symbol: {alert.split('-')[1]} ID: {alert.split('-')[0]} Price: {alerts['lowerThan'][alert]}'
+                low_alert = f'Symbol: {alert.split("-")[1]} ID: {alert.split("-")[0]} Price: {alerts["lowerThan"][alert]}'
                 all_low_alerts.append(low_alert)
             self.data['text'] = f'Lower Than - Alerts:\n\n{"\n".join(all_low_alerts)}'
             r.post(url=sendMessageUrl, data=self.data)
