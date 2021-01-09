@@ -213,7 +213,7 @@ Github: <a href="https://github.com/freshSauce">@freshSauce</a>
         """
         market = market.upper()
 
-        symbol = f'{symbol}.MX' if 'MX' in symbol
+        symbol = f'{symbol}.MX' if 'MX' in market else symbol
 
         markets = ['CRYPTO', 'US', 'MX']
 
