@@ -58,7 +58,7 @@ Github: <a href="https://github.com/freshSauce">@freshSauce</a>
         datastart = self.data.copy()
         datastart['parse_mode'] = 'HTML'
         datastart['disable_web_page_preview'] = 'true'
-        return
+        return Response('Ok', status=200)
     def alert_list(self):
         all_high_alerts = []
         all_low_alerts = []
