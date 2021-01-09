@@ -283,8 +283,9 @@ def index():
             StockBot(BOT_KEY, API_KEY, chat_id).start_message()
 
         if bool(match(r'[!/]addtowatchlist [\w\W]+', lastmsg)):
-            commandData = lastmsg.split()[1:]
-            StockBot(BOT_KEY, API_KEY, chat_id).addtowatchlist(commandData)
+            symbol = lastmsg.split()[2]
+            market = lastmsg.split()[1]
+            StockBot(BOT_KEY, API_KEY, chat_id).add_to_watchlist(market, symbol)
         return Response('Ok', status=200)
 
 
