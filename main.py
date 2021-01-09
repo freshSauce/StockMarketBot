@@ -278,14 +278,16 @@ def index():
         
         lastmsg, chat_id = getlastMsg(msg)
         if lastmsg.split()[0] == '/start':
-            print('Okay')
-            return Response('Ok', status=200)
             StockBot(BOT_KEY, API_KEY, chat_id).start_message()
 
         if bool(match(r'[!/]addtowatchlist [\w\W]+', lastmsg)):
-            symbol = lastmsg.split()[2]
-            market = lastmsg.split()[1]
+            try:
+                symbol = lastmsg.split()[2]
+                market = lastmsg.split()[1]
+            except:
+                r.post(f'https://api.telegramcom/bot{BOT_KEY}/sendMessage?chat_id={chat_id}&text=Incorrect use: /addtowatchlist <market> <symbol>')
             StockBot(BOT_KEY, API_KEY, chat_id).add_to_watchlist(market, symbol)
+                
         return Response('Ok', status=200)
 
 
