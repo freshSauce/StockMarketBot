@@ -1,7 +1,7 @@
 import requests as r
 import threading
 import logging
-from flask import Flask
+from flask import Flask, request, Response
 
 logging.basicConfig(format='[%(asctime)s - %(levelname)s] - %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', filename='debug.log', level=logging.INFO)
 
