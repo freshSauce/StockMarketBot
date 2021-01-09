@@ -115,11 +115,11 @@ Github: <a href="https://github.com/freshSauce">@freshSauce</a>
                                 priceAlert = float(list(price.values())[0])
                                 if alert == 'higherThan' and price > priceAlert:
                                     text = f'Price of {watchlist_price} over {priceAlert}'
-                                    r.post(url=self.sendMessageUrl, data={chat_id=self.chat_id, text=text})
+                                    r.post(url=self.sendMessageUrl, data={'chat_id':self.chat_id, 'text':text})
 
                                 elif alert == 'lowerThan' and price < priceAlert:
                                     text = f'Price of {watchlist_price} below {priceAlert}'
-                                    r.post(url=self.sendMessageUrl, data={chat_id=self.chat_id, text=text})
+                                    r.post(url=self.sendMessageUrl, data={'chat_id':self.chat_id, 'text':text})
                                 else:
                                     pass
             except Exception as e:
