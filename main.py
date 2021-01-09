@@ -260,7 +260,7 @@ Github: <a href="https://github.com/freshSauce">@freshSauce</a>
         return
             
 
-
+app = Flask(__name__)
 
 
 def getlastMsg(msg):
