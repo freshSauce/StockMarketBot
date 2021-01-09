@@ -278,7 +278,7 @@ def index():
         lastmsg, chat_id = getlastMsg(msg)
         if lastmsg.split()[0] == '/start':
             print('Okay')
-            pass
+            return Response('Ok', status=200)
             StockBot(BOT_KEY, API_KEY, chat_id).start_message()
 
         if bool(match(r'[!/]addtowatchlist [\w\W]+', lastmsg)):
