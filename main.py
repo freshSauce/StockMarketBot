@@ -271,8 +271,8 @@ def getlastMsg(msg):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    API_KEY = '2eaf1f6336msh30851f4ab48043cp1b5dedjsn24ff7dcff0a0'
-    BOT_KEY = '1588291748:AAG5qv3fB8LevoK42JkqlSKR7L-KpzLmHu8'
+    API_KEY = ''
+    BOT_KEY = ''
     if request.method == 'POST':
         msg = request.get_json()
         
