@@ -13,7 +13,7 @@ class StockBot:
         self.headers = {'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 '
                                       '(KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'}
         self.stock_watchlist = []
-        self.querystring = {"region":"US","symbols":', '.join(stock_watchlist)}
+        self.querystring = {"region":"US","symbols":', '.join(self.stock_watchlist)}
         self.stock_url = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/v2/get-quotes'
         self.headers = {
                         'x-rapidapi-key': STOCK_API_KEY,
